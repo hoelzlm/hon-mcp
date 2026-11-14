@@ -1,6 +1,6 @@
 # hon-mcp
 
-MCP server that lets Claude check and control Haier hOn appliances (washing machine and similar) through [pyhOn](https://github.com/Andre0512/pyhOn). Runs as a Docker container on the home server so every PC on the network can use it.
+MCP server that lets Claude check and control Haier hOn appliances (washing machine and similar) through [pyhOn](https://github.com/Andre0512/pyhOn). Runs as a Docker container.
 
 > **Unofficial.** Not affiliated with or endorsed by Haier. It uses the unofficial hOn cloud API via pyhOn, which can change or break without notice. Use at your own risk.
 
@@ -24,15 +24,13 @@ To start a program the machine must be loaded, the door closed, and remote contr
 
 ## Use it
 
-Add the server to Claude Code on any PC in the network:
+Add the server to Claude Code:
 
 ```bash
-claude mcp add --transport http hon http://<homeserver>:8765/mcp
+claude mcp add --transport http hon http://<localhost>:8765/mcp
 ```
 
-Over Tailscale use the server's Tailscale IP or MagicDNS name instead.
-
-## Deploy (home server)
+## Deployment (server on the whole network)
 
 Prerequisites: Docker with Compose, and an hOn account.
 
