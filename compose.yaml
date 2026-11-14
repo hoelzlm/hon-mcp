@@ -1,0 +1,14 @@
+services:
+  hon-mcp:
+    build: .
+    container_name: hon-mcp
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "8765:8765"
+    labels:
+      - homepage.group=Apps
+      - homepage.name=hon MCP
+      - homepage.icon=mdi-washing-machine
+      - homepage.href=http://${HOST_IP:-localhost}:8765/mcp
+      - homepage.description=Haier hOn MCP server
